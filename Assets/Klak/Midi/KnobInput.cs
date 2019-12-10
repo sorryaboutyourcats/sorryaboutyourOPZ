@@ -34,17 +34,10 @@ namespace Klak.Midi
         #region Editable properties
 
         [SerializeField]
-        MidiSource _source;
-
-        [SerializeField]
         MidiChannel _channel = MidiChannel.All;
 
         [SerializeField]
-        [Tooltip("ModWheel is 1, generic knobs are 12 - 31.")]
         int _knobNumber = 0;
-
-        [SerializeField]
-        bool _isRelative = false;
 
         [SerializeField]
         AnimationCurve _responseCurve = AnimationCurve.Linear(0, 0, 1, 1);
@@ -57,21 +50,6 @@ namespace Klak.Midi
         #endregion
 
         #region Node I/O
-
-        [Inlet]
-        public float channel {
-            set {
-                if (!enabled)
-                    return;
-
-                MidiChannel newChannel = (MidiChannel)Mathf.Clamp(value, (float)MidiChannel.Ch1, (float)MidiChannel.All);
-                if (newChannel == _channel)
-                    return;
-
-                _channel = newChannel;
-                ResetValue();
-            }
-        }
 
         [SerializeField, Outlet]
         VoidEvent _onEvent = new VoidEvent();
@@ -102,81 +80,50 @@ namespace Klak.Midi
         {
             const float threshold = 0.5f;
 
-            if (_isRelative)
-            {
-                float relValue = (inputValue < 0.5f) ? 1 : -1;
-                _valueEvent.Invoke(relValue / 127);
-            }
-            else
-            {
-                // Update the target value for the interpolator.
-                _floatValue.targetValue = _responseCurve.Evaluate(inputValue);
+            // Update the target value for the interpolator.
+            _floatValue.targetValue = _responseCurve.Evaluate(inputValue);
 
-                // Invoke the event in direct mode.
-                if (!_interpolator.enabled)
-                    _valueEvent.Invoke(_floatValue.Step());
-            }
+            // Invoke the event in direct mode.
+            if (!_interpolator.enabled)
+                _valueEvent.Invoke(_floatValue.Step());
 
             // Detect an on-event and invoke the event.
             if (_lastInputValue < threshold && inputValue >= threshold)
                 _onEvent.Invoke();
 
-            // Detect an off-event and invoke the event.
+            // Detect an ooff-event and invoke the event.
             if (inputValue < threshold && _lastInputValue >= threshold)
                 _offEvent.Invoke();
 
             _lastInputValue = inputValue;
         }
 
-        void ResetValue()
-        {
-            _lastInputValue = _source.GetKnob(_channel, _knobNumber, 0);
-            _floatValue.targetValue = _responseCurve.Evaluate(_lastInputValue);
-        }
-
-        MidiSource _prevSource;
-
-        void SwitchSource()
-        {
-            if (_prevSource)
-                _prevSource.knobDelegate -= OnKnobUpdate;
-
-            if (!_source)
-                _source = MidiMaster.GetSource();
-
-            _source.knobDelegate += OnKnobUpdate;
-
-            ResetValue();
-
-            _prevSource = _source;
-        }
-
         #endregion
 
         #region MonoBehaviour functions
 
-        void Awake()
+        void OnEnable()
         {
-            _floatValue = new FloatInterpolator(0, _interpolator);
+            MidiMaster.knobDelegate += OnKnobUpdate;
         }
 
         void OnDisable()
         {
-            if (_source)
-                _source.knobDelegate -= OnKnobUpdate;
+            MidiMaster.knobDelegate -= OnKnobUpdate;
         }
 
-        void OnEnable()
+        void Start()
         {
-            SwitchSource();
+            _lastInputValue = MidiMaster.GetKnob(_channel, _knobNumber);
+
+            _floatValue = new FloatInterpolator(
+                _responseCurve.Evaluate(_lastInputValue), _interpolator
+            );
         }
 
         void Update()
         {
-            if (_source != _prevSource)
-                SwitchSource();
-
-            if (!_isRelative && _interpolator.enabled)
+            if (_interpolator.enabled)
                 _valueEvent.Invoke(_floatValue.Step());
         }
 

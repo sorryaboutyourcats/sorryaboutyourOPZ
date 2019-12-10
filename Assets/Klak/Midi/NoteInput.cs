@@ -42,18 +42,6 @@ namespace Klak.Midi
         }
 
         [SerializeField]
-        MidiSource _source;
-
-        MidiSource source {
-            get { 
-                if (_source == null)
-                    return MidiMaster.GetSource();
-
-                return _source;
-            }
-        }
-
-        [SerializeField]
         MidiChannel _channel = MidiChannel.All;
 
         [SerializeField]
@@ -85,16 +73,6 @@ namespace Klak.Midi
         #endregion
 
         #region Node I/O
-
-        [Inlet]
-        public float channel {
-            set {
-                if (!enabled)
-                    return;
-
-                _channel = (MidiChannel)Mathf.Clamp(value, (float)MidiChannel.Ch1, (float)MidiChannel.All);
-            }
-        }
 
         [SerializeField, Outlet]
         VoidEvent _noteOnEvent = new VoidEvent();
@@ -129,7 +107,7 @@ namespace Klak.Midi
                 return _lowestNote <= note && note <= _highestNote;
         }
 
-        void NoteOn(MidiChannel channel, int note, float velocity)
+		void NoteOn(MidiChannel channel, int note, float velocity)
         {
             if (!FilterNote(channel, note)) return;
 
@@ -150,53 +128,29 @@ namespace Klak.Midi
             _floatValue.targetValue = _offValue;
         }
 
-        MidiSource _prevSource;
-
-        void SwitchSource()
-        {
-            if (_prevSource)
-            {
-                _prevSource.noteOnDelegate -= NoteOn;
-                _prevSource.noteOffDelegate -= NoteOff;
-            }
-
-            if (!_source)
-                _source = MidiMaster.GetSource();
-
-            _source.noteOnDelegate += NoteOn;
-            _source.noteOffDelegate += NoteOff;
-
-            _prevSource = _source;
-        }
-
         #endregion
 
         #region MonoBehaviour functions
 
-        void Awake()
+        void OnEnable()
         {
-            _floatValue = new FloatInterpolator(_offValue, _interpolator);
+            MidiMaster.noteOnDelegate += NoteOn;
+            MidiMaster.noteOffDelegate += NoteOff;
         }
 
         void OnDisable()
         {
-            if (_source)
-            {
-                _source.noteOnDelegate -= NoteOn;
-                _source.noteOffDelegate -= NoteOff;
-            }
+            MidiMaster.noteOnDelegate -= NoteOn;
+            MidiMaster.noteOffDelegate -= NoteOff;
         }
 
-        void OnEnable()
+        void Start()
         {
-            SwitchSource();
+            _floatValue = new FloatInterpolator(_offValue, _interpolator);
         }
 
         void Update()
         {
-            if (_source != _prevSource)
-                SwitchSource();
-            
             _valueEvent.Invoke(_floatValue.Step());
         }
 
