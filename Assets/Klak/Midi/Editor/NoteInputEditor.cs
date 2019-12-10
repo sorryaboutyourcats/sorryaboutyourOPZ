@@ -30,8 +30,6 @@ namespace Klak.Midi
     [CustomEditor(typeof(NoteInput))]
     public class NoteInputEditor : Editor
     {
-        SerializedProperty _source;
-
         SerializedProperty _channel;
         SerializedProperty _noteFilter;
         SerializedProperty _noteName;
@@ -50,8 +48,6 @@ namespace Klak.Midi
 
         void OnEnable()
         {
-            _source = serializedObject.FindProperty("_source");
-
             _channel = serializedObject.FindProperty("_channel");
             _noteFilter = serializedObject.FindProperty("_noteFilter");
             _noteName = serializedObject.FindProperty("_noteName");
@@ -72,10 +68,6 @@ namespace Klak.Midi
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
-
-            EditorGUILayout.PropertyField(_source);
-
-            EditorGUILayout.Space();
 
             EditorGUILayout.PropertyField(_channel);
             EditorGUILayout.PropertyField(_noteFilter);

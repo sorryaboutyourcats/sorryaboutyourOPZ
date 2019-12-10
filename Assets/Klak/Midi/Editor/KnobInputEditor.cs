@@ -30,10 +30,8 @@ namespace Klak.Midi
     [CustomEditor(typeof(KnobInput))]
     public class KnobInputEditor : Editor
     {
-        SerializedProperty _source;
         SerializedProperty _channel;
         SerializedProperty _knobNumber;
-        SerializedProperty _isRelative;
         SerializedProperty _responseCurve;
         SerializedProperty _interpolator;
         SerializedProperty _onEvent;
@@ -42,10 +40,8 @@ namespace Klak.Midi
 
         void OnEnable()
         {
-            _source = serializedObject.FindProperty("_source");
             _channel = serializedObject.FindProperty("_channel");
             _knobNumber = serializedObject.FindProperty("_knobNumber");
-            _isRelative = serializedObject.FindProperty("_isRelative");
             _responseCurve = serializedObject.FindProperty("_responseCurve");
             _interpolator = serializedObject.FindProperty("_interpolator");
             _onEvent = serializedObject.FindProperty("_onEvent");
@@ -57,23 +53,13 @@ namespace Klak.Midi
         {
             serializedObject.Update();
 
-            EditorGUILayout.PropertyField(_source);
-
-            EditorGUILayout.Space();
-
             EditorGUILayout.PropertyField(_channel);
-
             EditorGUILayout.PropertyField(_knobNumber);
 
             EditorGUILayout.Space();
 
-            EditorGUILayout.PropertyField(_isRelative);
-
-            if (!_isRelative.boolValue)
-            {
-                EditorGUILayout.PropertyField(_responseCurve);
-                EditorGUILayout.PropertyField(_interpolator);
-            }
+            EditorGUILayout.PropertyField(_responseCurve);
+            EditorGUILayout.PropertyField(_interpolator);
 
             EditorGUILayout.Space();
 
