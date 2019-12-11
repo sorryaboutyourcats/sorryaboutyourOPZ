@@ -14,7 +14,7 @@ Punch-in effects trigger visual effects [drums and other have variations]:
   * loop 2 == digital glitch
   * pitch = ascii
   * follow / echo == ramp
-  * ramp up / fill 1 == analong glitch
+  * ramp up / fill 1 == analog glitch
   * short == mirror
   * ramp down / fill 2 == glitch
   * long == motion + hue adjustment
