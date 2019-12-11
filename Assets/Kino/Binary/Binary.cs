@@ -25,9 +25,9 @@ namespace Kino
         }
 
         // Scale factor of dither pattan
-        [SerializeField, Range(1, 8)] int _ditherScale = 1;
+        [SerializeField, Range(1, 8)] float _ditherScale = 1;
 
-        public int ditherScale {
+        public float ditherScale {
             get { return _ditherScale; }
             set { _ditherScale = value; }
         }
