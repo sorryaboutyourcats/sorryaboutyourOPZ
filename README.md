@@ -12,7 +12,7 @@ Punch-in effects trigger visual effects [drums and other have variations]:
   * loop 1 == bloom
   * stereo == degrade
   * loop 2 == digital glitch
-  * pitch = ascii
+  * pitch == ascii
   * follow / echo == ramp
   * ramp up / fill 1 == analog glitch
   * short == mirror
