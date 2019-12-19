@@ -155,10 +155,13 @@ namespace Videolab
 
         void Start()
         {
+            autoPlay = true;
             ReloadCamTexture();
+            
 
             if (_autoPlay)
                 playing = true;
+            print("on");
         }
 
         ScreenOrientation _screenOrientation = ScreenOrientation.Unknown;
@@ -187,6 +190,19 @@ namespace Videolab
 
                 _frameNeedsFixing = false;
             }
+        }
+
+        #endregion
+
+        #region sorryaboutyourscene
+
+        void OnDestroy()
+        {
+            print("off");
+            //playing = false;
+            //_autoPlay = false;
+            //autoPlay = false;
+            _camTexture.Stop();
         }
 
         #endregion

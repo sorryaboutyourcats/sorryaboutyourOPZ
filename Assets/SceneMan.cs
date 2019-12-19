@@ -27,18 +27,18 @@ public class SceneMan : MonoBehaviour
     {
         if (Input.GetKey("up"))
         {
-            SceneManager.LoadScene(sceneBuildIndex:0);
+            SceneManager.LoadScene(sceneBuildIndex:0); //webcam
         }
 
         if (Input.GetKey("down"))
         {
-            SceneManager.LoadScene(sceneBuildIndex:1);
+            SceneManager.LoadScene(sceneBuildIndex:1); //mario
         }
 
-        if (Input.GetKey("left"))
-        {
-            SceneManager.LoadScene(sceneBuildIndex:2);
-        }
+        //if (Input.GetKey("left"))
+        //{
+        //    SceneManager.LoadScene(sceneBuildIndex:2);
+        //}
     }
 
 }
