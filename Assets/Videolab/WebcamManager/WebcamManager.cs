@@ -161,7 +161,6 @@ namespace Videolab
 
             if (_autoPlay)
                 playing = true;
-            print("on");
         }
 
         ScreenOrientation _screenOrientation = ScreenOrientation.Unknown;
@@ -198,10 +197,6 @@ namespace Videolab
 
         void OnDestroy()
         {
-            print("off");
-            //playing = false;
-            //_autoPlay = false;
-            //autoPlay = false;
             _camTexture.Stop();
         }
 
