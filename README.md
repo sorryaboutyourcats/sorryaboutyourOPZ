@@ -69,6 +69,8 @@ random | vignette B
 ### sorryaboutyourwebcam
 ![sorry about your webcam](https://media.giphy.com/media/TLO1MJzDOuU8Ih8FNo/giphy.gif)
 
+[Longer video of effects shown here.](https://twitter.com/SryAbtYourCats/status/1207809996328554496)
+
 The drums punch-in effects trigger effects on the screen:
 
 audio effect | visual effect
