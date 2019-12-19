@@ -63,7 +63,7 @@ long | motion + hue adjustment B
 random | vignette B
 
 ### sorryaboutyourwebcam
-![sorry about your webcam](https://media.giphy.com/media/fTzDuzMrnsaH3Qu7D1/giphy.gif)
+![sorry about your webcam](https://media.giphy.com/media/TLO1MJzDOuU8Ih8FNo/giphy.gif)
 
 audio effect | visual effect
 -------------|-------------
