@@ -28,6 +28,8 @@ Each channel makes Mario and the gang dance:
 * **chord**
   * Rabite
 
+![sorry about your o p z mario effects](https://media.giphy.com/media/W3BuBnFySgqjShCzKQ/giphy.gif)
+
 The drums punch-in effects trigger effects on the screen:
 
 audio effect | visual effect
