@@ -112,9 +112,9 @@ random | vignette B
 
 ## Installation
 
-* Download ZIP
-* Extract ZIP
-* Open up sorryaboutyourOPZ.exe
+1. Download ZIP
+1. Extract ZIP
+1. Open up sorryaboutyourOPZ.exe
 
 ## Special thanks
 
