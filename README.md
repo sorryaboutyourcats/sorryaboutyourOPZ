@@ -124,4 +124,4 @@ The majority of effects are from [Keijiro Takahashi](https://github.com/keijiro)
 
 ## End
 
-Thank you for trying it out!
+If you have any suggestions / ideas, let me know on [Twitter](https://twitter.com/SryAbtYourCats)!
