@@ -27,17 +27,21 @@ public class SceneMan : MonoBehaviour
     {
         if (Input.GetKey("1"))
         {
-            SceneManager.LoadScene(sceneBuildIndex:1); //mario
+            SceneManager.LoadScene(sceneBuildIndex:0); //mario
         }
 
         if (Input.GetKey("2"))
         {
-            SceneManager.LoadScene(sceneBuildIndex:0); //webcam
+            SceneManager.LoadScene(sceneBuildIndex:1); //webcam
         }
 
         if (Input.GetKey("3"))
         {
-            SceneManager.LoadScene(sceneBuildIndex: 2); //line8
+            SceneManager.LoadScene(sceneBuildIndex:2); //line8
+        }
+        if (Input.GetKey("q")) //quit
+        {
+            Application.Quit();
         }
     }
 
