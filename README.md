@@ -2,6 +2,8 @@
 
 sorryaboutyourOPZ is a ghetto visualizer for the OP-Z.
 
+The webcam functionality was only tested on one computer - if it works for you please let me know, thanks!
+
 ## Modes
 
 ### Mario and the gang
@@ -67,6 +69,8 @@ random | vignette B
 ### sorryaboutyourwebcam
 ![sorry about your webcam](https://media.giphy.com/media/TLO1MJzDOuU8Ih8FNo/giphy.gif)
 
+The drums punch-in effects trigger effects on the screen:
+
 audio effect | visual effect
 -------------|-------------
 duck | binary A
@@ -108,9 +112,9 @@ random | vignette B
 
 ## Installation
 
-Download ZIP
-Extract ZIP
-Open up sorryaboutyourOPZ.exe
+* Download ZIP
+* Extract ZIP
+* Open up sorryaboutyourOPZ.exe
 
 ## Special thanks
 
