@@ -1,36 +1,119 @@
 # sorryaboutyourOPZ
 
-Quickly made Unity app that takes the MIDI from your OP-Z, and makes sprites from SNES games dance!
+sorryaboutyourOPZ is a ghetto visualizer for the OP-Z.
 
-Go to releases, download and extract the zip, then open up sorryaboutyourOPZ.exe.
-To close, press ALT+F4.
+## Modes
 
-Punch-in effects trigger visual effects [drums and other have variations]:
-* Drums
-  * duck == binary
-  * filter sweep == tube
-  * loop 1 == bloom
-  * stereo == degrade
-  * loop 2 == digital glitch
-  * pitch == ascii
-  * follow / echo == ramp
-  * ramp up / fill 1 == analog glitch
-  * short == mirror
-  * ramp down / fill 2 == glitch
-  * long == motion + hue adjustment
-  * random == vignette
-* Other
-  * duck == binary
-  * filter sweep == tube
-  * loop 1 == bloom
-  * stereo == degrade
-  * loop 2 == digital glitch
-  * pitch == halftone
-  * follow / echo == ramp
-  * ramp up / fill 1 == analog glitch
-  * short == mirror
-  * ramp down / fill 2 == desaturation
-  * long == motion + hue adjustment
-  * random == vignette
+### Mario and the gang
+![sorry about your o p z mario](https://media.giphy.com/media/RiExe7twk6qPnoGrSV/giphy.gif)
 
-![Mario and the crew yo](https://i.imgur.com/m9sr6f8.png)
+Each channel makes Mario and the gang dance:
+* **kick**
+  * Mario
+  * Yoshi
+  * Donkey Kong
+* **snare**
+  * Samus
+  * Background light
+* **perc**
+  * Lakitu
+* **sample**
+  * Link
+* **bass**
+  * Kirby
+* **lead**
+  * Mega Man
+* **arp**
+  * Chun Li
+* **chord**
+  * Rabite
+
+The drums punch-in effects trigger effects on the screen:
+
+audio effect | visual effect
+-------------|-------------
+duck | binary A
+filter sweep | tube A
+loop 1 | bloom A
+stereo | degrade A
+loop 2 | digital glitch A
+pitch | ascii
+follow / echo | ramp A
+ramp up / fill 1 | analog glitch A
+short | mirror A
+ramp down / fill 2 | glitch
+long | motion + hue adjustment A
+random | vignette A
+
+The synth punch-in effects trigger effects on the screen:
+
+audio effect | visual effect
+-------------|-------------
+duck | binary B
+filter sweep | tube B
+loop 1 | bloom B
+stereo | degrade B
+loop 2 | digital glitch B
+pitch | halftone
+follow / echo | ramp B
+ramp up / fill 1 | analog glitch B
+short | mirror B
+ramp down / fill 2 | desaturation
+long | motion + hue adjustment B
+random | vignette B
+
+### sorryaboutyourwebcam
+![sorry about your webcam](https://media.giphy.com/media/fTzDuzMrnsaH3Qu7D1/giphy.gif)
+
+audio effect | visual effect
+-------------|-------------
+duck | binary A
+filter sweep | tube A
+loop 1 | bloom A
+stereo | degrade A
+loop 2 | digital glitch A
+pitch | ascii
+follow / echo | ramp A
+ramp up / fill 1 | analog glitch A
+short | mirror A
+ramp down / fill 2 | glitch
+long | motion + hue adjustment A
+random | vignette A
+
+The synth punch-in effects trigger effects on the screen:
+
+audio effect | visual effect
+-------------|-------------
+duck | binary B
+filter sweep | tube B
+loop 1 | bloom B
+stereo | degrade B
+loop 2 | digital glitch B
+pitch | halftone
+follow / echo | ramp B
+ramp up / fill 1 | analog glitch B
+short | mirror B
+ramp down / fill 2 | desaturation
+long | motion + hue adjustment B
+random | vignette B
+
+## Keys
+
+* 1 - Mario and the gang
+* 2 - sorryaboutyourwebcam
+* 3 - Nothing
+* Q - Quit
+
+## Installation
+
+Download ZIP
+Extract ZIP
+Open up sorryaboutyourOPZ.exe
+
+## Special thanks
+
+The majority of effects are from [Keijiro Takahashi](https://github.com/keijiro), so thank you for being awesome!
+
+## End
+
+Thank you for trying it out!
