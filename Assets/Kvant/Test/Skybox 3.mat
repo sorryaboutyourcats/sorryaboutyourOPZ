@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Default Wall
-  m_Shader: {fileID: 4800000, guid: 1ded3f0cc90114d1c9b7431b375d82e2, type: 3}
-  m_ShaderKeywords: _COLORMODE_SINGLE
+  m_Name: Skybox 3
+  m_Shader: {fileID: 103, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -31,16 +31,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _NormalMap
+          name: _DetailNormalMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _DetailNormalMap
+          name: _Tex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 8900000, guid: 2b3e7b47330b84378919c8fd00cd749b, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -85,27 +85,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _PositionTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _RotationTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _ScaleTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -121,8 +100,8 @@ Material:
         second: .5
       data:
         first:
-          name: _Smoothness
-        second: .5
+          name: _Exposure
+        second: 1
       data:
         first:
           name: _Parallax
@@ -158,23 +137,11 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .5
-      data:
-        first:
-          name: _OcclusionStr
-        second: 1
-      data:
-        first:
-          name: _ColorMode
         second: 0
       data:
         first:
-          name: _RandomUV
-        second: 0
-      data:
-        first:
-          name: _NormalScale
-        second: 1
+          name: _Rotation
+        second: 38
     m_Colors:
       data:
         first:
@@ -183,8 +150,8 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .501960814, g: .501960814, b: .501960814, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _Color2
-        second: {r: .5, g: .5, b: .5, a: 1}
+          name: _Tint
+        second: {r: .5, g: .5, b: .5, a: .5}

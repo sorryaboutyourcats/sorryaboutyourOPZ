@@ -6,9 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Default Wall
+  m_Name: Wall 3b
   m_Shader: {fileID: 4800000, guid: 1ded3f0cc90114d1c9b7431b375d82e2, type: 3}
-  m_ShaderKeywords: _COLORMODE_SINGLE
+  m_ShaderKeywords: COLOR_RANDOM COLOR_SINGLE RANDOM_UV _COLORMODE_COLOR_SINGLE _COLORMODE_RANDOM
+    _RANDOM_UV
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -122,7 +123,7 @@ Material:
       data:
         first:
           name: _Smoothness
-        second: .5
+        second: .649999976
       data:
         first:
           name: _Parallax
@@ -158,15 +159,15 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .5
+        second: .778999984
       data:
         first:
           name: _OcclusionStr
-        second: 1
+        second: .759000003
       data:
         first:
           name: _ColorMode
-        second: 0
+        second: 1
       data:
         first:
           name: _RandomUV
@@ -183,8 +184,8 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .501960814, g: .501960814, b: .501960814, a: 1}
+        second: {r: 1, g: .5, b: .5, a: 1}
       data:
         first:
           name: _Color2
-        second: {r: .5, g: .5, b: .5, a: 1}
+        second: {r: .661764741, g: 0, b: 0, a: 1}
