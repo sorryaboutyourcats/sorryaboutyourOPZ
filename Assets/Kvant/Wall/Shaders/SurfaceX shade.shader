@@ -42,7 +42,7 @@ Shader "Kvant/Wall/SurfaceX"
 		[Toggle]
 		_RandomUV("-", Float) = 0
 
-		_TintColor("-", Color) = (1, 1, 1, 1)
+		_TintColor("Tint Color", Color) = (0.5,0.5,1,1)
 	}
 		SubShader
 		{
@@ -76,7 +76,7 @@ Shader "Kvant/Wall/SurfaceX"
 
 			half _RandomUV;
 
-			half4 _TintColor;
+			float4 _TintColor;
 
 			// Quaternion multiplication.
 			// http://mathworld.wolfram.com/Quaternion.html
@@ -123,8 +123,7 @@ Shader "Kvant/Wall/SurfaceX"
 			{
 			#if _ALBEDOMAP
 				half4 c = tex2D(_MainTex, IN.uv_MainTex);
-				o.Albedo = IN.color.rgb * c.rgb; // silver right
-				//o.Albedo = IN.color.rgb * c.rgb + _TintColor; // added color but bad
+				o.Albedo = IN.color.rgb * c.rgb;
 				o.Alpha = IN.color.a * c.a;
 			#else
 				o.Albedo = IN.color.rgb;
@@ -132,7 +131,7 @@ Shader "Kvant/Wall/SurfaceX"
 			#endif
 
 			#if _NORMALMAP
-				half4 n = tex2D(_NormalMap, IN.uv_MainTex) + _TintColor; // added tint color
+				half4 n = tex2D(_NormalMap, IN.uv_MainTex) + _TintColor;
 				o.Normal = UnpackScaleNormal(n, _NormalScale);
 			#endif
 
