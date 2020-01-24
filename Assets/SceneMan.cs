@@ -39,6 +39,12 @@ public class SceneMan : MonoBehaviour
         {
             SceneManager.LoadScene(sceneBuildIndex:2); //line8
         }
+
+        if (Input.GetKey("4"))
+        {
+            SceneManager.LoadScene(sceneBuildIndex:3); //tripp
+        }
+
         if (Input.GetKey("q")) //quit
         {
             Application.Quit();
