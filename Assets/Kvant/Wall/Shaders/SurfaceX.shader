@@ -30,8 +30,10 @@ Shader "Kvant/Wall/SurfaceX"
 		_Color("-", Color) = (0, 0, 0, 0)
 		_Color2("-", Color) = (0.5, 0.5, 0.5, 1)
 
-		_Metallic("-", Range(0,1)) = 0.5
-		_Smoothness("-", Range(0,1)) = 0.5
+		_Metallic("-", Range(0,1)) = 1
+		_Smoothness("-", Range(0,1)) = 1
+		//_Metallic("-", Range(0,1)) = 0.5
+		//_Smoothness("-", Range(0,1)) = 0.5
 
 		_MainTex("-", 2D) = "white"{}
 		_NormalMap("-", 2D) = "bump"{}

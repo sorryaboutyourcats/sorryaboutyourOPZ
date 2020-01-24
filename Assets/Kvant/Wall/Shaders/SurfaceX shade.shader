@@ -17,7 +17,7 @@
 // .xyz = scale factor
 // .w   = random value (0-1)
 //
-Shader "Kvant/Wall/SurfaceX"
+Shader "Kvant/Wall/SurfaceXShade"
 {
 	Properties
 	{
