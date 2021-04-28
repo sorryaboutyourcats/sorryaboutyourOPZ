@@ -125,3 +125,5 @@ The majority of effects are from [Keijiro Takahashi](https://github.com/keijiro)
 ## End
 
 If you have any suggestions / ideas, let me know on [Twitter](https://twitter.com/SryAbtYourCats)!
+
+Tweet about it: https://twitter.com/SryAbtYourCats/status/1204465000238026756
