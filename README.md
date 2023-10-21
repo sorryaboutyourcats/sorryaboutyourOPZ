@@ -1,4 +1,4 @@
-# sorryaboutyourOPZ Quest 3 Edition!
+# sorryaboutyourOPZ Quest 3 Edition
 
 // work in progress
 
