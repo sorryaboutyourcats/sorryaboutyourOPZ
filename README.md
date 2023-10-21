@@ -1,6 +1,4 @@
-# sorryaboutyourOPZ Quest 3 Edition
-
-// work in progress
+# sorryaboutyourOPZ
 
 sorryaboutyourOPZ is a ghetto visualizer for the OP-Z.
 
