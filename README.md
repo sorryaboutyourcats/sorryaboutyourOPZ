@@ -1,3 +1,5 @@
+// below is the original readme.. this is still a work in progress!
+
 # sorryaboutyourOPZ
 
 sorryaboutyourOPZ is a ghetto visualizer for the OP-Z.
