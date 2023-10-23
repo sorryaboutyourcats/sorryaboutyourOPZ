@@ -5,15 +5,15 @@ using Bezier;
 
 #if UNITY_2018_1_OR_NEWER
 
+using UnityEditor.Experimental.AssetImporters;
 
-
-[UnityEditor.AssetImporters.ScriptedImporter(1, "svg")]
-class SVGImporter : UnityEditor.AssetImporters.ScriptedImporter
+[ScriptedImporter(1, "svg")]
+class SVGImporter : ScriptedImporter
 {
     [SerializeField]
     bool _stripGroups = false;
 
-    public override void OnImportAsset(UnityEditor.AssetImporters.AssetImportContext ctx)
+    public override void OnImportAsset(AssetImportContext ctx)
     {
         string svgStr = null;
         using (StreamReader reader = new StreamReader(ctx.assetPath))
